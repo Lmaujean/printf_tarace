@@ -42,13 +42,13 @@ int	pro_conv(const char *str, int index, va_list ap, t_printf_env *env)
 	else if (str[index + 1] == 'd' || str[index + 1] == 'i')
 		ft_putnbr_size(va_arg(ap, int), 1, env);
 	else if (str[index + 1] == 'u')
-		process_u_conv(va_arg(ap, int), env);
+		process_u_conv(va_arg(ap, unsigned int), env);
 	else if (str[index + 1] == '%')
 		ft_putchar_size('%', 1, env);
 	else if (str[index + 1] == 'x' || str[index + 1] == 'X')
-		process_x_conv(va_arg(ap, int), str[index + 1], env);
+		process_x_conv(va_arg(ap, unsigned int), str[index + 1], env);
 	else if (str[index + 1] == 'p')
-		ft_write_hexap(va_arg(ap, unsigned long), 16, env);
+		ft_write_hexap(va_arg(ap, unsigned long long), 16, env);
 	return (index + 1);
 }
 
