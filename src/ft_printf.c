@@ -12,16 +12,6 @@
 
 #include "../ft_printf.h"
 
-int	validate_data(const char *str)
-{
-	if (!str)
-	{
-		ft_putstr_fd("Format cannot be null", 1);
-		return (-1);
-	}
-	return (0);
-}
-
 int	get_size(long value, long base)
 {
 	if (value > -base && value <= -1)
@@ -71,14 +61,10 @@ int	ft_printf(const char *str, ...)
 	int				ret;
 	va_list			ap;
 	t_printf_env	*env;
-	int				valid;
 
 	va_start(ap, str);
 	env = init_env();
 	if (!env)
-		return (-1);
-	valid = validate_data(str);
-	if (valid < 0)
 		return (-1);
 	process_printing(ap, str, env);
 	va_end(ap);

@@ -47,7 +47,7 @@ void	*init_env(void)
 	return (env);
 }
 
-void	process_u_conv(int nb, t_printf_env *env)
+void	process_u_conv(unsigned int nb, t_printf_env *env)
 {
 	unsigned int	unsigned_nb;
 
@@ -55,7 +55,7 @@ void	process_u_conv(int nb, t_printf_env *env)
 	ft_putnbr_unsigned(unsigned_nb, env);
 }
 
-void	process_x_conv(int nb, char conv, t_printf_env *env)
+void	process_x_conv(unsigned int nb, char conv, t_printf_env *env)
 {
 	char	*ret;
 	int		i;
